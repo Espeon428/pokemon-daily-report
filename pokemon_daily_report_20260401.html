@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>POKEMON DAILY REPORT - 2026年4月1日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #E3350D;
+    --game-color: #3B82F6;
+    --app-color: #10B981;
+    --collab-color: #F59E0B;
+    --goods-color: #8B5CF6;
+    --tournament-color: #EF4444;
+    --anime-color: #EC4899;
+    --schedule-color: #06B6D4;
+    --bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text: #1E293B;
+    --text-light: #64748B;
+    --border: #E2E8F0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #E3350D 0%, #FF6B35 50%, #FFD700 100%);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(227, 53, 13, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+  .header h1 {
+    font-size: 2.2em;
+    font-weight: 900;
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+  .header .date {
+    font-size: 1.1em;
+    margin-top: 8px;
+    font-weight: 500;
+    position: relative;
+    opacity: 0.95;
+  }
+  .header .subtitle {
+    font-size: 0.85em;
+    margin-top: 5px;
+    position: relative;
+    opacity: 0.85;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 30px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.15em;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  .section-header .emoji { font-size: 1.3em; }
+
+  .bg-game { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+  .bg-app { background: linear-gradient(135deg, #10B981, #059669); }
+  .bg-collab { background: linear-gradient(135deg, #F59E0B, #D97706); }
+  .bg-goods { background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
+  .bg-tournament { background: linear-gradient(135deg, #EF4444, #DC2626); }
+  .bg-anime { background: linear-gradient(135deg, #EC4899, #DB2777); }
+  .bg-schedule { background: linear-gradient(135deg, #06B6D4, #0891B2); }
+
+  /* Card */
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    border-left: 5px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .card h3 {
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .card p {
+    color: var(--text-light);
+    font-size: 0.92em;
+    line-height: 1.7;
+  }
+  .card .url {
+    margin-top: 8px;
+    font-size: 0.82em;
+  }
+  .card .url a {
+    color: var(--game-color);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .card .url a:hover { text-decoration: underline; }
+
+  .card-game { border-left-color: var(--game-color); }
+  .card-app { border-left-color: var(--app-color); }
+  .card-collab {
+    border-left-color: var(--collab-color);
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  }
+  .card-collab h3 { color: #92400E; }
+  .card-goods { border-left-color: var(--goods-color); }
+  .card-tournament { border-left-color: var(--tournament-color); }
+  .card-anime { border-left-color: var(--anime-color); }
+
+  .card .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .card .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 600;
+  }
+  .tag-period { background: #DBEAFE; color: #1E40AF; }
+  .tag-place { background: #D1FAE5; color: #065F46; }
+  .tag-price { background: #FEE2E2; color: #991B1B; }
+  .tag-new { background: #E3350D; color: white; }
+
+  /* Highlight box */
+  .highlight-box {
+    border: 3px solid #E3350D;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 30px 0;
+    background: linear-gradient(135deg, #FFF5F5 0%, #FEF2F2 100%);
+    position: relative;
+  }
+  .highlight-box::before {
+    content: "TODAY'S HIGHLIGHT";
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background: #E3350D;
+    color: white;
+    padding: 3px 16px;
+    border-radius: 20px;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .highlight-box p {
+    margin-top: 8px;
+    font-size: 0.95em;
+    line-height: 1.8;
+  }
+
+  /* Schedule table */
+  .schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .schedule-table th {
+    background: linear-gradient(135deg, #06B6D4, #0891B2);
+    color: white;
+    padding: 12px 16px;
+    font-size: 0.88em;
+    font-weight: 600;
+    text-align: left;
+  }
+  .schedule-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88em;
+  }
+  .schedule-table tr:nth-child(even) td { background: #F8FAFC; }
+  .schedule-table tr:last-child td { border-bottom: none; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-light);
+    font-size: 0.78em;
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: white; font-size: 12px; }
+    .container { max-width: 100%; padding: 10px; }
+    .header { box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card { box-shadow: none; page-break-inside: avoid; }
+    .card:hover { transform: none; }
+    .section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card-collab { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .highlight-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .schedule-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>POKEMON DAILY REPORT</h1>
+  <div class="date">2026年4月1日（水）</div>
+  <div class="subtitle">ポケモン30周年イヤー ― このレポートだけでポケモン最新動向を完全キャッチアップ</div>
+</div>
+
+<!-- ===== 1. ゲーム新情報 ===== -->
+<div class="section">
+  <div class="section-header bg-game">
+    <span class="emoji">🎮</span> ゲーム新情報
+  </div>
+
+  <div class="card card-game">
+    <h3>🆕 『Pokémon Champions』4月8日配信開始！（Switch / Switch 2）</h3>
+    <p>ポケモンバトルに特化した新作『Pokémon Champions』が、4月8日（水）にNintendo Switch / Switch 2向けに配信開始。基本プレイ無料（一部アイテム課金）。スターターパック付きは980円（税込）。メガメガニウム・メガエンブオー・メガオーダイルが新登場し、メガシンカで初登場する特性を持つポケモンも。スマホ版は2026年夏配信予定で、クロスプラットフォーム対戦に対応。</p>
+    <div class="meta">
+      <span class="tag tag-new">NEW</span>
+      <span class="tag tag-period">📅 4月8日配信</span>
+      <span class="tag tag-price">💰 基本無料 / スターターパック980円</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.pokemonchampions.jp/ja/" target="_blank">https://www.pokemonchampions.jp/ja/</a></div>
+  </div>
+
+  <div class="card card-game">
+    <h3>⚔️ VGC競技シーンがPokémon Championsに移行</h3>
+    <p>4月8日の配信開始に合わせ、VGC（ビデオゲーム・チャンピオンシップ）の公式大会プラットフォームが『Pokémon Champions』に移行。4月1日からはレギュレーションIが新フォーマットとして適用される。Play! Pokémon競技者は新プラットフォームへの適応が必要。</p>
+    <div class="url">🔗 <a href="https://www.pokemon.com/us/pokemon-news/play-pokemon-competitions-transition-to-pokemon-champions-on-april-and-may-2026" target="_blank">pokemon.com - Play! Pokemon Competitions Transition</a></div>
+  </div>
+
+  <div class="card card-game">
+    <h3>🏠 『ぽこ あ ポケモン』発売1ヶ月 ― IKEAコラボ開始！</h3>
+    <p>3月5日発売のSwitch 2専用『ぽこ あ ポケモン』は発売4日で世界累計220万本（うち国内100万本）を突破。本日4月1日から、IKEAとのコラボ企画「IKEAでポケモンと見つけよう、楽しい暮らし」がスタート。ゲーム内に「IKEA アイランド」が登場し、実店舗ではピカチュウとカビゴンをイメージした空間が展開される（〜6月30日）。</p>
+    <div class="meta">
+      <span class="tag tag-new">NEW</span>
+      <span class="tag tag-period">📅 4/1〜6/30</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.pocoapokemon.jp/ja/" target="_blank">https://www.pocoapokemon.jp/ja/</a></div>
+  </div>
+
+  <div class="card card-game">
+    <h3>🌊 新作本編『ポケモン ウインド・ウェーブ』（2027年予定）</h3>
+    <p>ポケモンプレゼンツ2026で発表された本編新作『ポケモン ウインド・ウェーブ』は2027年世界同時発売予定。対応機種はSwitch 2。続報待ちの状況。</p>
+    <div class="url">🔗 <a href="https://game8.jp/pokemonbattle/441083" target="_blank">ゲームエイト - ポケモンプレゼンツ最新情報</a></div>
+  </div>
+</div>
+
+<!-- ===== 2. アプリ最新情報 ===== -->
+<div class="section">
+  <div class="section-header bg-app">
+    <span class="emoji">📱</span> ポケモンアプリ最新情報
+  </div>
+
+  <!-- Pokemon GO -->
+  <div class="card card-app">
+    <h3>🚶 Pokémon GO ― 4月コミュニティ・デイはカヌチャン！</h3>
+    <p>4月11日（土）14:00〜17:00にカヌチャン（Tinkatink）のコミュニティ・デイが開催。色違いカヌチャンが初登場し、イベント中にナカヌチャンを進化させるとデカヌチャンが限定技「デカハンマー」を習得。ボーナスはアメ2倍、ほしのすな3倍、おこう3時間、ルアー1時間など。スペシャルリサーチは$1.99。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 4/11 14:00-17:00</span>
+    </div>
+    <div class="url">🔗 <a href="https://pokemongo.com/news/communityday-april-2026-tinkatink" target="_blank">pokemongo.com - Community Day</a></div>
+  </div>
+
+  <div class="card card-app">
+    <h3>👗 Pokémon GO ― ファッションレイドデイ（4/4）</h3>
+    <p>4月4日（土）14:00〜17:00にファッションコスチュームポケモンがレイドに登場。カイリュー、バタフリー、ディグダ、ウパー、ニューラ、キルリア、アブソル、コリンク、グレッグル、シママ、チラーミィなど豪華ラインナップ。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 4/4 14:00-17:00</span>
+    </div>
+    <div class="url">🔗 <a href="https://pokemongohub.net/post/event/pokemon-go-april-2026-events/" target="_blank">Pokémon GO Hub - April Events</a></div>
+  </div>
+
+  <div class="card card-app">
+    <h3>🐉 Pokémon GO ― シャドウラティオス登場（4/1〜5/5）</h3>
+    <p>4月1日（水）〜5月5日（火）にシャドウラティオスがシャドウレイドに登場。4月の伝説レイドにはレジドラゴ、カイオーガ、グラードン、カプ・コケコ、カプ・テテフが復刻。毎週水曜18:00〜19:00のレイドアワーも継続。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 4/1〜5/5</span>
+    </div>
+    <div class="url">🔗 <a href="https://pokemongo.gamewith.jp/article/show/549879" target="_blank">GameWith - 4月イベントスケジュール</a></div>
+  </div>
+
+  <div class="card card-app">
+    <h3>⚾ Pokémon GO ― ポケモンベースボールフェスタ2026</h3>
+    <p>東京読売ジャイアンツ戦に連動したイベント。4月3日は12:00〜14:30と16:30〜20:00、4月4・5日は10:00〜14:00と16:00〜18:30にレイドバトルが開催。ポケモン30周年×プロ野球12球団コラボの一環。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 4/3〜4/5</span>
+    </div>
+    <div class="url">🔗 <a href="https://pokemongo.com/ja/news/giants_game" target="_blank">pokemongo.com - ベースボールフェスタ</a></div>
+  </div>
+
+  <div class="card card-app">
+    <h3>🌿 Pokémon GO ― サステナビリティウィーク</h3>
+    <p>ルートを探索するサステナビリティウィークイベントが4月に開催。環境保護をテーマにしたイベントで、特定のルートを歩くことでボーナスが得られる。</p>
+    <div class="url">🔗 <a href="https://pokemongo.com/en/news/sustainability-week-2026" target="_blank">pokemongo.com - Sustainability Week</a></div>
+  </div>
+
+  <!-- Pokemon Sleep -->
+  <div class="card card-app">
+    <h3>😴 Pokémon Sleep ― ラティアス新登場（4/6〜）</h3>
+    <p>Ver.3.4.0アップデートが実施され、4月6日（日）15:00からラティアスが登場。ドラゴンタイプの伝説ポケモンで、ポケモンのおこうを使って出現。グリーングラス島、ラピスラズリ湖畔、アンバーキャニオン等に出現。ラティアスとラティオスは例外的に同じチームに編成可能。アブソルのメインスキルが「おてつだいブーストS → M」に変更。</p>
+    <div class="meta">
+      <span class="tag tag-new">NEW</span>
+      <span class="tag tag-period">📅 4/6〜</span>
+    </div>
+    <div class="url">🔗 <a href="https://pokemongohub.net/post/sleep/pokemon-sleep-version-3-4-0-update-maintenance-and-latias-information/" target="_blank">Pokémon GO Hub - Sleep v3.4.0</a></div>
+  </div>
+
+  <!-- Pokemon UNITE -->
+  <div class="card card-app">
+    <h3>⚔️ Pokémon UNITE ― WCS2026予選開始 & 新ポケモン追加</h3>
+    <p>WCS2026（8月サンフランシスコ開催）の出場権をかけたオープン予選が4月〜6月に開催。日本予選は4月〜5月にオンラインで実施予定。新ポケモンとしてフリーザー、サンダー、ファイヤーのカントー三鳥、およびジョウト御三家（メガニウム、バクフーン、オーダイル）が参戦。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 予選: 4月〜6月</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.pokemonunite.jp/ja/topics/news/wcs2026-02-20-01/" target="_blank">Pokémon UNITE公式 - WCS2026</a></div>
+  </div>
+
+  <!-- Pokemon TCG Pocket -->
+  <div class="card card-app">
+    <h3>🃏 ポケポケ ― 「シャイニングメガ」パック好評配信中</h3>
+    <p>3月26日に追加された新テーマ拡張パック「シャイニングメガ」が好評配信中。メガリザードンXex、メガゲンガーexなどメガシンカ要素のカードが収録。4月1日からはメガゲンガー・色違いメガゲンガーの新コレクションファイル＆コレクションボードが登場。</p>
+    <div class="meta">
+      <span class="tag tag-new">NEW</span>
+      <span class="tag tag-period">📅 4/1〜</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.pokemontcgpocket.com/ja/news/" target="_blank">ポケポケ公式 - お知らせ</a></div>
+  </div>
+</div>
+
+<!-- ===== 3. 企業コラボ ===== -->
+<div class="section">
+  <div class="section-header bg-collab">
+    <span class="emoji">🏭</span> 企業コラボ・タイアップ
+  </div>
+
+  <div class="card card-collab">
+    <h3>🏠 IKEA × ぽこ あ ポケモン「IKEAでポケモンと見つけよう、楽しい暮らし」</h3>
+    <p>本日4月1日スタート！ゲーム内に「IKEA アイランド」が登場し、ピカチュウとカビゴンをイメージした空間が展開。実店舗でもコラボ展示が実施される。ゲームを通じてIKEAの家具やインテリアの世界を体験できるユニークなコラボ。</p>
+    <div class="meta">
+      <span class="tag tag-new">NEW</span>
+      <span class="tag tag-period">📅 4/1〜6/30（ゲーム内）/ 4/1〜5/10（店舗）</span>
+      <span class="tag tag-place">📍 全国IKEA店舗 & ゲーム内</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.4gamer.net/games/945/G094534/20260331023/" target="_blank">4Gamer - IKEA×ぽこあポケモン</a></div>
+  </div>
+
+  <div class="card card-collab">
+    <h3>☕ コメダ珈琲店 × ポケモン「ポケモンといっしょだモン♪」第2弾</h3>
+    <p>4月9日（木）8:00から第2弾がスタート。限定コラボメニューや特典が第1弾とは異なるラインナップに切り替わる。SNSキャンペーンでは、公式X投稿をリポストすると抽選でポケモンデザインKOMECA（1,000円分チャージ）が100名に当たる（応募期間: 4/9 8:00〜4/16 23:59）。第1弾は4月8日まで。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 第2弾: 4/9〜5/13</span>
+      <span class="tag tag-place">📍 全国コメダ珈琲店・おかげ庵</span>
+      <span class="tag tag-price">💰 メニュー価格は店舗により異なる</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.komeda.co.jp/pokemon2026/" target="_blank">コメダ珈琲店公式 - ポケモンコラボ</a></div>
+  </div>
+
+  <div class="card card-collab">
+    <h3>⚾ プロ野球12球団 × ポケモン30周年「ポケモンベースボールフェスタ2026」</h3>
+    <p>ポケモン30周年を記念し、プロ野球全12球団とのコラボが実現。シーズンを通してポケモンが野球を盛り上げる。Pokémon GOとの連携イベントも実施中（前述）。各球団限定グッズの販売も予定。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 2026年シーズン通期</span>
+      <span class="tag tag-place">📍 全国のプロ野球スタジアム</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.famitsu.com/article/202602/67055" target="_blank">ファミ通 - 30周年キックオフ発表会</a></div>
+  </div>
+
+  <div class="card card-collab">
+    <h3>👕 UNIQLO UT × ポケモン30周年コレクション</h3>
+    <p>ポケモン30周年を記念し、初代『赤・緑』の水彩タッチ公式アートを使用したUTコレクションが展開中。御三家、リザードン、ピカチュウ、カビゴンなどのデザイン。メンズ・キッズで販売。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 販売中</span>
+      <span class="tag tag-place">📍 全国ユニクロ店舗 & オンラインストア</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.uniqlo.com/jp/ja/spl/ut-graphic-tees/pokemon-sketch/men" target="_blank">UNIQLO公式 - ポケモンUT</a></div>
+  </div>
+
+  <div class="card card-collab">
+    <h3>🛍️ ドン・キホーテ / アピタ / ピアゴ × ポケモン アパレル</h3>
+    <p>全国のドンキ/アピタ/ピアゴにて、カビゴン・ミミッキュ・ヌオー・ブラッキー・ドオー・ゲンガーら人気ポケモンをデザインした限定アパレルが販売中。ジャージ、トレーナー、アラジンパンツなど多数ラインナップ。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 3/14〜（販売中）</span>
+      <span class="tag tag-place">📍 全国ドンキ / アピタ / ピアゴ</span>
+    </div>
+    <div class="url">🔗 <a href="https://collabo-cafe.com/events/collabo/pocket-monster-don-quijote-apita-piago2026/" target="_blank">コラボカフェ - ドンキ×ポケモン</a></div>
+  </div>
+
+  <div class="card card-collab">
+    <h3>✈️ ポケモンジェット3機 就航決定</h3>
+    <p>ポケモン30周年を記念し、赤・緑・青をモチーフにしたポケモンジェット3機の就航が決定。詳細は今後発表予定。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 詳細続報待ち</span>
+    </div>
+    <div class="url">🔗 <a href="https://www.famitsu.com/article/202602/67055" target="_blank">ファミ通 - 30周年キックオフ発表会</a></div>
+  </div>
+
+  <div class="card card-collab">
+    <h3>🗾 ポケモンローカルActs物産展</h3>
+    <p>ポケモンローカルActsと連携した物産展が開催中。全国各地の名産品とポケモンのコラボグッズが購入可能。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 3/26〜4/13</span>
+    </div>
+    <div class="url">🔗 <a href="https://local-bussanten.pokemon.jp" target="_blank">ポケモンローカルActs物産展</a></div>
+  </div>
+
+  <div class="card card-collab">
+    <h3>🏪 イオンモール × Pokémon GO</h3>
+    <p>全国のイオンモールにPokémon GOのポケストップやジムが設置され、コラボイベントが展開中。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 3/20〜（実施中）</span>
+      <span class="tag tag-place">📍 全国イオンモール</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4. グッズ・新商品 ===== -->
+<div class="section">
+  <div class="section-header bg-goods">
+    <span class="emoji">🛍️</span> グッズ・新商品
+  </div>
+
+  <div class="card card-goods">
+    <h3>🎉 ポケモンセンター「ピカピカ！ピカチュウ」30周年記念グッズ</h3>
+    <p>ポケモン30周年を記念したグッズ「ピカピカ！ピカチュウ」がポケモンセンターで販売中。初代『赤・緑』の世界観を反映したデザインのぬいぐるみ、アクリルスイングなど。全9地方の旅立ちの3匹をラインナップしたアクリルスイングも登場。</p>
+    <div class="url">🔗 <a href="https://www.pokemon.co.jp/goods/2026/02/260227_to02.html" target="_blank">ポケモン公式 - ピカピカ！ピカチュウ</a></div>
+  </div>
+
+  <div class="card card-goods">
+    <h3>🎰 ポケモン一番くじ 30周年記念</h3>
+    <p>ポケモン30周年を記念した一番くじが登場。スナック菓子やその他コラボアイテムも続々発表。</p>
+    <div class="url">🔗 <a href="https://game.watch.impress.co.jp/docs/news/2088734.html" target="_blank">GAME Watch - 30周年グッズ一斉展示</a></div>
+  </div>
+
+  <div class="card card-goods">
+    <h3>🎪 ポケモンプライズ（UFOキャッチャー景品）4月入荷分</h3>
+    <p>2026年4月分のプライズ景品としてポケモンぬいぐるみが全国のゲームセンターに入荷予定。</p>
+    <div class="url">🔗 <a href="https://premium.gamepedia.jp/hobby/prize/s-01J7DKHA6WFASPVSGTH82B4C4N" target="_blank">攻略大百科 - 4月プライズ一覧</a></div>
+  </div>
+
+  <div class="card card-goods">
+    <h3>🃏 ポケモンカード ― 新弾「アビスアイ」「ストームエメラルダ」情報</h3>
+    <p>今後発売予定のパックとして「アビスアイ」「ストームエメラルダ」（メガレックウザ収録予想）の情報がリーク。10月にはポケカ30周年記念商品の世界同時発売も予定されている。正式発表は続報待ち。</p>
+    <div class="url">🔗 <a href="https://snkrdunk.com/articles/15950/" target="_blank">スニーカーダンク - 2026年新弾スケジュール</a></div>
+  </div>
+
+  <div class="card card-goods">
+    <h3>📍 ポケモンセンター出張所（熊本・サクラマチ）</h3>
+    <p>熊本県のサクラマチクマモトで3月19日〜5月10日までポケモンセンター出張所が開催中。限定グッズも販売。</p>
+    <div class="meta">
+      <span class="tag tag-period">📅 3/19〜5/10</span>
+      <span class="tag tag-place">📍 サクラマチクマモト（熊本）</span>
+    </div>
+    <div class="url">🔗 <a href="https://oneheart65.net/pokemoncenterbranch_schedule_2/" target="_blank">ポケモン情報調査隊 - 出張所スケジュール</a></div>
+  </div>
+</div>
+
+<!-- ===== 5. 大会・競技シーン ===== -->
+<div class="section">
+  <div class="section-header bg-tournament">
+    <span class="emoji">🏆</span> 大会・競技シーン
+  </div>
+
+  <div class="card card-tournament">
+    <h3>🃏 ポケモンカード シティリーグ2026 シーズン4 開催中</h3>
+    <p>3月〜5月にかけてシティリーグ2026シーズン4が全国のポケモンカードジムで開催中。次の大型大会は「チャンピオンズリーグ2026 愛知」（5/9〜10）。PJCS2026の出場権獲得に向けた熱い戦いが続く。</p>
+    <div class="url">🔗 <a href="https://www.pokemon-card.com/event/championshipseries/" target="_blank">ポケカ公式 - チャンピオンシップシリーズ</a></div>
+  </div>
+
+  <div class="card card-tournament">
+    <h3>⚔️ Pokémon UNITE WCS2026 日本予選 4月〜5月</h3>
+    <p>8月サンフランシスコでのWCS2026出場権をかけた日本予選が4月〜5月にオンラインで開催予定。オープン予選は4月〜6月にグローバルで実施。</p>
+    <div class="url">🔗 <a href="https://www.pokemon.co.jp/ex/pjcs/2026/pokemonunite/" target="_blank">PJCS2026公式 - ポケモンユナイト部門</a></div>
+  </div>
+
+  <div class="card card-tournament">
+    <h3>🎮 Pokémon Champions VGC移行 ― レギュレーションI適用開始</h3>
+    <p>本日4月1日からVGCにレギュレーションIが適用開始。4月8日の『Pokémon Champions』配信後は、同タイトルが競技の標準プラットフォームに。</p>
+    <div class="url">🔗 <a href="https://thegamehaus.com/pokemon/pokemon-champions-competitive-transition-guide-april-may-2026/2026/03/31/" target="_blank">The Game Haus - Competitive Transition Guide</a></div>
+  </div>
+</div>
+
+<!-- ===== 6. アニメ・映像 ===== -->
+<div class="section">
+  <div class="section-header bg-anime">
+    <span class="emoji">🎬</span> アニメ・映像
+  </div>
+
+  <div class="card card-anime">
+    <h3>📺 TVアニメ『ポケットモンスター』リコ&ロイ編 放送中</h3>
+    <p>主人公リコとロイの冒険が描かれるTVアニメシリーズが引き続きテレビ東京系列で放送中。30周年イヤーに合わせた特別展開にも期待。</p>
+    <div class="url">🔗 <a href="https://www.tv-tokyo.co.jp/anime/pocketmonster/" target="_blank">テレビ東京 - ポケモンアニメ公式</a></div>
+  </div>
+
+  <div class="card card-anime">
+    <h3>🎥 新作映画 ― 現時点で発表なし</h3>
+    <p>2026年の新作ポケモン映画は現時点で正式発表されていない。30周年イヤーでの発表に期待するファンの声も。歴代映画はAmazon Prime VideoやABEMAで配信中。</p>
+    <div class="url">🔗 <a href="https://www.pokemon.co.jp/tv_movie/movie/" target="_blank">ポケモン公式 - 映画</a></div>
+  </div>
+</div>
+
+<!-- ===== 今後の注目スケジュール ===== -->
+<div class="section">
+  <div class="section-header bg-schedule">
+    <span class="emoji">📅</span> 今後の注目スケジュール
+  </div>
+
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>イベント</th>
+        <th>カテゴリ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4/1（水）</td>
+        <td>VGCレギュレーションI適用開始 / ぽこポケ×IKEAコラボ開始 / ポケポケ新コレクション / シャドウラティオス登場</td>
+        <td>ゲーム / アプリ</td>
+      </tr>
+      <tr>
+        <td>4/3-5</td>
+        <td>Pokémon GO ベースボールフェスタ（巨人戦）</td>
+        <td>アプリ</td>
+      </tr>
+      <tr>
+        <td>4/4（土）</td>
+        <td>Pokémon GO ファッションレイドデイ</td>
+        <td>アプリ</td>
+      </tr>
+      <tr>
+        <td>4/6（日）</td>
+        <td>Pokémon Sleep ラティアス登場</td>
+        <td>アプリ</td>
+      </tr>
+      <tr>
+        <td>4/8（水）</td>
+        <td>『Pokémon Champions』配信開始</td>
+        <td>ゲーム</td>
+      </tr>
+      <tr>
+        <td>4/9（木）</td>
+        <td>コメダ珈琲店×ポケモン 第2弾スタート</td>
+        <td>コラボ</td>
+      </tr>
+      <tr>
+        <td>4/11（土）</td>
+        <td>Pokémon GO コミュニティ・デイ（カヌチャン）</td>
+        <td>アプリ</td>
+      </tr>
+      <tr>
+        <td>4/13（月）</td>
+        <td>ポケモンローカルActs物産展 終了</td>
+        <td>コラボ</td>
+      </tr>
+      <tr>
+        <td>4月〜5月</td>
+        <td>ポケモンユナイト WCS2026日本予選</td>
+        <td>大会</td>
+      </tr>
+      <tr>
+        <td>5/9-10</td>
+        <td>ポケカ チャンピオンズリーグ2026 愛知</td>
+        <td>大会</td>
+      </tr>
+      <tr>
+        <td>5/10</td>
+        <td>ポケモンセンター出張所 熊本 終了</td>
+        <td>グッズ</td>
+      </tr>
+      <tr>
+        <td>5/13</td>
+        <td>コメダ珈琲店×ポケモン コラボ終了</td>
+        <td>コラボ</td>
+      </tr>
+      <tr>
+        <td>2026年夏</td>
+        <td>Pokémon Champions スマホ版配信</td>
+        <td>ゲーム</td>
+      </tr>
+      <tr>
+        <td>2026年8月</td>
+        <td>ポケモンWCS2026（サンフランシスコ）</td>
+        <td>大会</td>
+      </tr>
+      <tr>
+        <td>2026年10月</td>
+        <td>ポケカ30周年記念商品 世界同時発売</td>
+        <td>グッズ</td>
+      </tr>
+      <tr>
+        <td>2027年</td>
+        <td>『ポケモン ウインド・ウェーブ』発売予定</td>
+        <td>ゲーム</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== TODAY'S HIGHLIGHT ===== -->
+<div class="highlight-box">
+  <p><strong>本日のビッグニュースは3つ。</strong>まず、いよいよ4月8日に『Pokémon Champions』がSwitch/Switch 2で配信開始となり、VGC競技シーンも同タイトルに移行する。バトル好きは今週中にダウンロード準備を。次に、『ぽこ あ ポケモン』×IKEAコラボが本日スタート。ゲーム内のIKEAアイランドと実店舗の双方で楽しめるユニークな企画だ。そして、Pokémon Sleepにラティアスが4月6日から登場。ラティオスとの夢のチーム編成が可能になる。30周年イヤーならではの大型コラボ＆新コンテンツが続々と展開中 ― 今月は見逃せないイベントが目白押し！</p>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>POKEMON DAILY REPORT は独自にリサーチした情報をまとめたものです。正確な情報は各公式サイトをご確認ください。</p>
+  <p>配信時刻: 2026年4月1日 朝 ｜ ポケモン30周年イヤー特別版</p>
+  <p>※ ポケモン・Pokémonは任天堂・クリーチャーズ・ゲームフリークの登録商標です。</p>
+</div>
+
+</div>
+</body>
+</html>
